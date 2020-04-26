@@ -21,10 +21,22 @@ const Navbar = (props) => {
 
 
     return (
-        <nav className='nav-wrapper grey darken-3'>
-            <div className='container'>
-                <Link to='/' className='brand-logo'><img src={MushroomIcon} alt='brand logo' /> MarioPlan</Link>
-                { isAuthenticated ? <SignedinLinks /> : <SignedoutLinks /> }    
+        <nav className='nav-extended grey darken-3'>
+            <div className='nav-wrapper'>
+                <div className='container'>
+                    <Link to='/' className='brand-logo'><img src={MushroomIcon} alt='brand logo' /> MarioPlan</Link>
+                    <div className='right hide-on-med-and-down'>
+                        { isAuthenticated ? <SignedinLinks /> : <SignedoutLinks /> }
+                    </div>
+                </div>
+            </div>
+            {/* extended nav */}
+            <div className="nav-wrapper hide-on-large-only">
+                <div className='container'>
+                    <div className="right">
+                        { isAuthenticated ? <SignedinLinks /> : <SignedoutLinks /> }
+                    </div>
+                </div>
             </div>
         </nav>
     )

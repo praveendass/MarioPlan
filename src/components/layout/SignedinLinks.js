@@ -6,7 +6,7 @@ import { signOutAction } from '../../store/actions/authActions';
 
 const SignedinLink = ({profile, signOut}) => {
     return (
-        <ul className='right hide-on-med-and-down'>
+        <ul>
             <li><NavLink to='/create'>New Project</NavLink></li>
             <li><a onClick = { signOut } href = '/signin'>Log Out</a></li>
             <li><NavLink to='/' className='btn btn-floating pink lighten-1'>{ profile.initials }</NavLink></li>
