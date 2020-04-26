@@ -1,0 +1,64 @@
+[debug] [2020-04-26T09:35:07.528Z] ----------------------------------------------------------------------
+[debug] [2020-04-26T09:35:07.530Z] Command:       D:\Applns\nodejs\node.exe C:\Users\a-9467\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2020-04-26T09:35:07.530Z] CLI Version:   8.1.1
+[debug] [2020-04-26T09:35:07.531Z] Platform:      win32
+[debug] [2020-04-26T09:35:07.531Z] Node Version:  v11.15.0
+[debug] [2020-04-26T09:35:07.535Z] Time:          Sun Apr 26 2020 15:05:07 GMT+0530 (India Standard Time)
+[debug] [2020-04-26T09:35:07.535Z] ----------------------------------------------------------------------
+[debug] [2020-04-26T09:35:07.535Z] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again.
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=592324368&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2020-04-26T09:35:40.818Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ {"code":"4/zAHzODfZRfSz7n3c9DroJy3A1QMejqVM-t5b-c05wjR8o3v2PsyHzqkP4Dkqr62U7PXF8w0dyp6OeCW_wsQ_wLw","client_id":"563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com","client_secret":"j9iVZfS8kkCEFUPaAeJV0sAi","redirect_uri":"http://localhost:9005","grant_type":"authorization_code"}
+[debug] [2020-04-26T09:35:41.334Z] Token Fetch Error: FirebaseError: Server Error. self signed certificate in certificate chain
+    at Request._callback (C:\Users\a-9467\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:32:31)
+    at self.callback (C:\Users\a-9467\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:193:13)
+    at Request.EventEmitter.emit (domain.js:481:20)
+    at Request.onRequestError (C:\Users\a-9467\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:877:8)
+    at ClientRequest.emit (events.js:193:13)
+    at ClientRequest.EventEmitter.emit (domain.js:481:20)
+    at TLSSocket.socketErrorListener (_http_client.js:397:9)
+    at TLSSocket.emit (events.js:193:13)
+    at TLSSocket.EventEmitter.emit (domain.js:481:20)
+    at emitErrorNT (internal/streams/destroy.js:91:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+    at processTicksAndRejections (internal/process/task_queues.js:81:17)
+[debug] [2020-04-26T09:35:58.179Z] ----------------------------------------------------------------------
+[debug] [2020-04-26T09:35:58.181Z] Command:       D:\Applns\nodejs\node.exe C:\Users\a-9467\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2020-04-26T09:35:58.181Z] CLI Version:   8.1.1
+[debug] [2020-04-26T09:35:58.182Z] Platform:      win32
+[debug] [2020-04-26T09:35:58.182Z] Node Version:  v11.15.0
+[debug] [2020-04-26T09:35:58.187Z] Time:          Sun Apr 26 2020 15:05:58 GMT+0530 (India Standard Time)
+[debug] [2020-04-26T09:35:58.187Z] ----------------------------------------------------------------------
+[debug] [2020-04-26T09:35:58.187Z] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again.
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=510138981&redirect_uri=http%3A%2F%2Flocalhost%3A9006
+[info] 
+[info] Waiting for authentication...
+[debug] [2020-04-26T09:36:14.504Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ {"code":"4/zAGZbIcpjPxRHIyFf2GD-49OEcUTGOj9OaOC6_7PuffqZJTgRAdemKFbQtYja4Gm1R5xXMUUlrPh1WhQNhveZKk","client_id":"563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com","client_secret":"j9iVZfS8kkCEFUPaAeJV0sAi","redirect_uri":"http://localhost:9006","grant_type":"authorization_code"}
+[debug] [2020-04-26T09:36:15.747Z] Token Fetch Error: FirebaseError: Server Error. self signed certificate in certificate chain
+    at Request._callback (C:\Users\a-9467\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:32:31)
+    at self.callback (C:\Users\a-9467\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:193:13)
+    at Request.EventEmitter.emit (domain.js:481:20)
+    at Request.onRequestError (C:\Users\a-9467\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:877:8)
+    at ClientRequest.emit (events.js:193:13)
+    at ClientRequest.EventEmitter.emit (domain.js:481:20)
+    at TLSSocket.socketErrorListener (_http_client.js:397:9)
+    at TLSSocket.emit (events.js:193:13)
+    at TLSSocket.EventEmitter.emit (domain.js:481:20)
+    at emitErrorNT (internal/streams/destroy.js:91:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+    at processTicksAndRejections (internal/process/task_queues.js:81:17)

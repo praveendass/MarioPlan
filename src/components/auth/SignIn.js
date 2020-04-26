@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {signInAction, clearAuthErrorAction} from '../../store/actions/authActions';
+import { connect } from 'react-redux';
 
 class SignIn extends Component {
 
@@ -7,9 +9,13 @@ class SignIn extends Component {
         password : ''
     }
 
+    componentDidMount = () => {
+        this.props.clearAuthError();
+    }
+    
     handleSumbit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        this.props.signIn(this.state)
     }
 
     handleChange = (e) => {
@@ -19,6 +25,9 @@ class SignIn extends Component {
     }
 
     render() {
+
+        const authError = this.props.authError;
+
         return (
             <div className='container'>
                 <form onSubmit={this.handleSumbit} className='white'>
@@ -32,10 +41,28 @@ class SignIn extends Component {
                         <input type='password' id='password' onChange={this.handleChange} value={this.state.password} ></input>
                     </div>
                     <button type='submit' className='btn pink ligthen-1 z-depth-0' >Login</button>
+                    <div className="red-text center">
+                        { authError? <p>{authError}</p> : null }
+                    </div>
                 </form>             
             </div>
         )
     }
 }
 
-export default SignIn
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signIn : (credentials) => { dispatch(signInAction(credentials)) },
+        clearAuthError: () => {dispatch(clearAuthErrorAction())}
+    }
+}
+
+
+const mapStatetoProps = (state) => {
+    //console.log(state);
+    return {
+        authError : state.auth.authError
+    }
+}
+
+export default connect(mapStatetoProps,mapDispatchToProps)(SignIn);

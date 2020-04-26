@@ -3,8 +3,8 @@ import React from 'react';
 
 const Notifications = () => {
     return (
-        <div>
-            <p>notifications</p>
+        <div className='notification section' >
+            <p>Notifications</p>
         </div>
     )
 }

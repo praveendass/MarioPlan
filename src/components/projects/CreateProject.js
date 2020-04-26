@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { addProjectAction } from '../../store/actions/projectActions'
+
 
 class CreateProject extends Component {
 
     state = {
-        topic : '',
+        title : '',
         content : ''
     }
 
     handleSumbit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        this.props.createProject(this.state);
+        this.props.history.push('/');
     }
 
     handleChange = (e) => {
@@ -19,13 +23,15 @@ class CreateProject extends Component {
     }
 
     render() {
+
+
         return (
             <div className='container'>
                 <form onSubmit={this.handleSumbit} className='white'>
                     <h5 className='grey-text text-darken-3'>Create new project</h5>
                     <div className='input-field'>
-                        <label htmlFor='topic'>Topic</label>
-                        <input type='text' id='topic' onChange={this.handleChange} value={this.state.topic} ></input>
+                        <label htmlFor='title'>Title</label>
+                        <input type='text' id='title' onChange={this.handleChange} value={this.state.title} ></input>
                     </div>
                     <div className='input-field'>
                         <label htmlFor='content'>Project Content</label>
@@ -38,4 +44,11 @@ class CreateProject extends Component {
     }
 }
 
-export default CreateProject;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createProject : (project) => { dispatch(addProjectAction(project)) }
+    }
+}
+
+
+export default connect(null, mapDispatchToProps)(CreateProject);

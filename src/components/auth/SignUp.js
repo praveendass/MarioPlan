@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { signUpAction, clearAuthErrorAction} from '../../store/actions/authActions';
+import { connect } from 'react-redux';
 
 class SignUp extends Component {
 
@@ -10,6 +12,10 @@ class SignUp extends Component {
         lastName : ''
     }
 
+    componentDidMount = () => {
+        this.props.clearAuthError();
+    }
+
     validatePassword = () => {
         if (this.state.password !== this.state.confirmPassword) {
             document.getElementById("confirmPassword").setCustomValidity("Passwords Don't Match");
@@ -19,7 +25,7 @@ class SignUp extends Component {
     handleSumbit = (e) => {
         e.preventDefault();
         this.validatePassword();
-        console.log(this.state);
+        this.props.signUp(this.state);
     }
 
     handleChange = (e) => {
@@ -29,7 +35,10 @@ class SignUp extends Component {
         })
     }
 
+
     render() {
+        const authError = this.props.authError;
+
         return (
             <div className='container'>
                 <form onSubmit={this.handleSumbit} className='white'>
@@ -55,10 +64,25 @@ class SignUp extends Component {
                         <input type='text' id='lastName' required onChange={this.handleChange} value={this.state.lastName} ></input>
                     </div>
                     <button type='submit' className='btn pink ligthen-1 z-depth-0' >Sign up</button>
+                        { authError ? (<p>{authError}</p>) : null}
+                    <div className='red-text center'></div>
                 </form>             
             </div>
         )
     }
 }
 
-export default SignUp;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signUp: (newUser) => { dispatch(signUpAction(newUser)) },
+        clearAuthError: () => {dispatch(clearAuthErrorAction())}
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        authError: state.auth.authError
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

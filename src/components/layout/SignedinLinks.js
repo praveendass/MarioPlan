@@ -1,16 +1,30 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { signOutAction } from '../../store/actions/authActions';
 
 
-const SignedinLink = () => {
+const SignedinLink = ({profile, signOut}) => {
     return (
         <ul className='right hide-on-med-and-down'>
             <li><NavLink to='/create'>New Project</NavLink></li>
-            <li><NavLink to='/logout'>Logout</NavLink></li>
-            <li><NavLink to='/' className='btn btn-floating pink lighten-1'>NN</NavLink></li>
+            <li><a onClick = { signOut } href = '/signin'>Log Out</a></li>
+            <li><NavLink to='/' className='btn btn-floating pink lighten-1'>{ profile.initials }</NavLink></li>
         </ul>
     )
 
 }
 
-export default SignedinLink;
+const mapStateToProps = (state) => {
+    return {
+        profile: state.firebase.profile
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signOut : () => { dispatch(signOutAction()) }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignedinLink);
