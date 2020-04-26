@@ -15,7 +15,7 @@ const createNotification = (notification) => {
 }
 
 exports.projectCreated = functions.firestore
-    .documents('/projects/{projectId}')
+    .document('/projects/{projectId}')
     .onCreate(doc=> {
         const project = doc.data();
         const notification = {
