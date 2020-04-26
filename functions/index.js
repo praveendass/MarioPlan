@@ -21,7 +21,7 @@ exports.projectCreated = functions.firestore
         const notification = {
             content: 'Added a new Project',
             user: `${project.authorFirstName} ${project.authorLastName}`,
-            time: admin.firestore.FieldValue.serverTimestamp();
+            time: admin.firestore.FieldValue.serverTimestamp()
         }
         return createNotification(notification);
     })
@@ -35,7 +35,7 @@ exports.userJoined = functions.auth
             const notification = {
                 content: 'Joined Mario Plan',
                 user: `${user.firstName} ${project.lastName}`,
-                time: admin.firestore.FieldValue.serverTimestamp();
+                time: admin.firestore.FieldValue.serverTimestamp()
             }
             return createNotification(notification);
         })
