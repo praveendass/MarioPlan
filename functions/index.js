@@ -34,7 +34,7 @@ exports.userJoined = functions.auth
             const user = doc.data();
             const notification = {
                 content: 'Joined Mario Plan',
-                user: `${user.firstName} ${project.lastName}`,
+                user: `${user.firstName} ${user.lastName}`,
                 time: admin.firestore.FieldValue.serverTimestamp()
             }
             return createNotification(notification);

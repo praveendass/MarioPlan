@@ -2,6 +2,7 @@ import React from 'react';
 
 
 const Notifications = ({notifications}) => {
+    
     return (
         <div className='section' >
             <div className='card z-depth-0' >
@@ -9,11 +10,12 @@ const Notifications = ({notifications}) => {
                     <span className='card-title' >Notifications</span>
                     <ul className='notifications'>
                         {notifications && notifications.map(notification=> {
+                            const time = new Date(notification.time.toDate()).toUTCString();
                             return (
                                 <li key={notification.id} >
-                                    <span className='pink-text'>{notification.user}</span>
+                                    <span className='pink-text lighten-3'>{notification.user} </span>
                                     <span>{notification.content}</span>
-                                    <div className='grey-text note-date'>{notification.date}</div>
+                                    <div className='grey-text note-date'>{time}</div>
                                 </li>
                             )
                         }) }
