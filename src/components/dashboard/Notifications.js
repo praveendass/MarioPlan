@@ -1,5 +1,5 @@
 import React from 'react';
-
+import moment from 'moment'
 
 const Notifications = ({notifications}) => {
     
@@ -10,7 +10,7 @@ const Notifications = ({notifications}) => {
                     <span className='card-title' >Notifications</span>
                     <ul className='notifications'>
                         {notifications && notifications.map(notification=> {
-                            const time = new Date(notification.time.toDate()).toUTCString();
+                            const time = moment(notification.time.toDate()).fromNow();
                             return (
                                 <li key={notification.id} >
                                     <span className='pink-text lighten-3'>{notification.user} </span>

@@ -2,13 +2,13 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
-
+import moment from 'moment'
 
 const ProjectDetails = (props) => {
 
     const project = props.project;
     //const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const createdDate = new Date(project.createdAt.toDate()).toUTCString();
+    const createdDate = moment(project.createdAt.toDate()).calendar();
 
     if (project) { 
         return (

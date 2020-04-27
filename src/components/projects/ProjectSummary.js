@@ -1,10 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import moment from 'moment'
 
 const ProjectSummary = ({project}) => {
     //const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const createdDate = new Date(project.createdAt.toDate()).toUTCString();
-    
+    const createdDate = moment(project.createdAt.toDate()).calendar();
     return (
         <Link to={"/project/"+project.id}>
             <div className='card z-depth-0 project-summary' >
