@@ -31,7 +31,7 @@ exports.projectCreated = functions.firestore
 exports.userJoined = functions.auth
     .user()
     .onCreate(user=>{
-        return admin.firestore.collection('users').get(user.uid).then(doc=>{
+        return admin.firestore().collection('users').get(user.uid).then(doc=>{
             const newUser = doc.data();
             const notification = {
                 content: 'Joined Mario Plan',
