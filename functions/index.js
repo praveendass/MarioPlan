@@ -23,6 +23,7 @@ exports.projectCreated = functions.firestore
             user: `${project.authorFirstName} ${project.authorLastName}`,
             time: admin.firestore.FieldValue.serverTimestamp()
         }
+        console.log('Project Created',notification);
         return createNotification(notification);
     })
 
