@@ -31,12 +31,13 @@ exports.userJoined = functions.auth
     .user()
     .onCreate(user=>{
         return admin.firestore.collection('users').get(user.uid).then(doc=>{
-            const user = doc.data();
+            const newUser = doc.data();
             const notification = {
                 content: 'Joined Mario Plan',
-                user: `${user.firstName} ${user.lastName}`,
+                user: `${newUser.firstName} ${newUser.lastName}`,
                 time: admin.firestore.FieldValue.serverTimestamp()
             }
+            console.log('User Joined',notification);
             return createNotification(notification);
         })
     })
